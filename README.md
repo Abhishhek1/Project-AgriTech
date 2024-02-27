@@ -1,1 +1,1 @@
-# Project-AgriTech
+# smart-agriculture-platform
