@@ -380,7 +380,7 @@ footer {
     color: #fff;
     padding: 20px;
     height:auto;
-    min-height: 250px;
+    min-height: 300px;
     width: 100%;
 }
 
@@ -455,6 +455,7 @@ footer {
     }
 }
 .copyright{
+  width: 100%;
     display: flex;
     justify-content: center;
     color: #fff;

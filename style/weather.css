@@ -1,0 +1,32 @@
+/*Map design*/
+.map-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 40px 20px;
+    gap: 20px;
+}
+.map-container .map-head{
+    font-size: 40px;
+    font-weight: bolder;
+    border-bottom: 1px solid grey;
+}
+
+/*Widget Design*/
+
+.widget-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 30vh;
+    width: 100%;
+    padding: 20px 40px;
+}
+.widget-cont .widget-head{
+    font-size: 40px;
+    font-weight: bolder;
+}
