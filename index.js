@@ -14,7 +14,6 @@ const toggleBtn = document.querySelector('.toggle-btn')
 
 
 // Blog javascript code(blog.html)
-
 const API_KEY = "dcbaa0f6e99740ccac8815c04b7b9a5f";
 const url = "https://newsapi.org/v2/everything?q=";
 
@@ -25,8 +24,11 @@ async function fetchNews(query) {
 
         if (data.articles && data.articles.length > 0) {
             const newsContainer = document.getElementById('card-container');
+            const maxArticlesToShow = 13;
 
-            data.articles.forEach(article => {
+            for (let i = 0; i < Math.min(data.articles.length, maxArticlesToShow); i++) {
+                const article = data.articles[i];
+
                 // Check if the article has an image
                 if (article.urlToImage) {
                     const cardContainer = document.createElement('div');
@@ -41,14 +43,14 @@ async function fetchNews(query) {
                     const newsImg = document.createElement('img');
                     newsImg.src = article.urlToImage;
                     newsImg.alt = "News Image";
-                    newsImg.id = "news-img";
+                    newsImg.classList.add('news-img');
 
                     const cardContent = document.createElement('div');
                     cardContent.classList.add('card-content');
 
                     const newsTitle = document.createElement('h3');
                     newsTitle.textContent = article.title;
-                    newsTitle.id = 'news-title';
+                    newsTitle.classList.add('news-title');
 
                     const newsSource = document.createElement('h6');
                     // Format the publishedAt date in a human-readable format with the desired time zone
@@ -71,7 +73,7 @@ async function fetchNews(query) {
 
                     newsContainer.appendChild(cardContainer);
                 }
-            });
+            }
         } else {
             console.log("No articles found in the data.");
         }
@@ -81,4 +83,4 @@ async function fetchNews(query) {
 }
 
 // Example usage
-fetchNews("farming, farm, agriculture, crop");
+fetchNews("farm + agriculture");
