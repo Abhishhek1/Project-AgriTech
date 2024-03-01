@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+/*----------Supply Chain designing----------*/
+/*Banner design*/
+
+.shop-banner img{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.shop-banner .banner-cont{
+  position: absolute;
+  z-index: 1;
+  left: 40px;
+  padding-top: 260px;
+}
+.banner-cont h1{
+  font-family: "Bodoni Moda", serif;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.banner-cont button{
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 45%;
+  margin-top: 20px;
+  padding: 10px;
+  background: transparent;
+  transition: all 0.2s ease-out;
+}
+
+.banner-cont button:hover{
+  background-color: #4a4a4a;
+  color: #fff;
+  scale: 1.08;
+}
+
+
+
+
+/*categories-part*/
+
+.flex{
+  display: flex;
+  justify-content: center;
+
+}
+.container h1{
+  display: flex;
+  padding-left: 100px;
+}
+.categories-header{
+  width: 90%;
+}
+.categories-header h1{
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+}
+#categories-cont{
+  flex-direction: column;
+  align-items: center;
+  padding-block: 40px;
+  font-family: "Poppins", sans-sshop
+}
+.categories-body{
+  padding: 20px;
+  gap: 90px;
+  flex-wrap: wrap;
+  
+}
+.categories-body .catg{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.catg img{
+  box-sizing: border-box;
+  object-fit: cover;
+  height: 8rem;
+  border-radius: 50%;
+  border: 2px solid #7ed957;
+  transition: all 0.2s ease;
+}
+.catg img:hover{
+  box-shadow: 4px 4px 10px #4a4a4a;
+  transform: translate(-2px);
+}
+
+/*Mega offer part*/
+#offer-products{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  margin: 30px;
+}
+#offer-products .offer-head{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 90%;
+  font-size: 45px;
+  padding: 10px 0;
+
+}
+#offer-products .offer-body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+}
+.offer-body .card img{
+  transition: all 0.3s ease-in;
+}
+.offer-body .card img:hover{
+  scale: 0.9;
+}
+
+
+/*------poster styling------------*/
+.poster{
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  width: 100%;
+  height: 180px;
+  margin: 30px 0;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: "Protest Riot", sans-serif;
+  overflow: hidden;
+}

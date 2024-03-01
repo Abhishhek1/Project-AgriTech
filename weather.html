@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <!--CSS Style added-->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/weather.css">
+    
+    <!-- Font Awesome added -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Boxicon Added -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <header>
+        <!------NAVBAR-------->
+        <div class="navbar">
+            <div class="logo"><a href="#">AgriTech</a></div>
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+
+                <li class="service-link"><a href="#">Service</a>
+                    <ul class="dropdwn-service">
+                        <li><a href="shop.html">Farmers shop</a></li>
+                        <li><a href="weather.html">Weather Report</a></li>
+                        <li><a href="tutorial.html">Training Tutorial</a></li>
+                       <li><a href="crop_management.html">Crop Management</a></li>
+                    </ul>
+                 </li>
+
+                <li><a href="/blog.html">Blogs</a></li>
+                <li><a href="About_us.html">About us</a></li>
+            </ul>
+            <a href="login.html" class="action-btn">LOG IN</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search"><i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+
+        <div class="dropdown-btn">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="index.html">About us</a></li>
+            <li><a href="/login.html" class="action-btn">LOG IN</a></li>
+        </div>
+    </header>
+
+    <!--content-->
+    <!--Current map-->
+    <div class="map-container">
+        <div class="map-head">Current weather Map</div>
+        <iframe width="1000" height="600" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=23.12&lon=72.729" frameborder="0"></iframe>
+    </div>
+    
+    
+    
+    <!--widget-container-->
+    <!---Form For alert check------>
+
+    
+    <div class="widget-cont">
+
+        <div class="widget-head">Check out latest Weather update</div>
+
+        <form action="" id="alert-form">
+            <label for="city">City:</label>
+            <select name="city" id="city">
+              <option value="Ahmedabad" onclick="">Ahmedabad</option>
+              <option value="Vadodara">Vadodara</option>
+              <option value="Surat">Surat</option>
+              <option value="Rajkot">Rajkot</option>
+            </select>
+    </form>
+
+        <div id="ww_eb4fe0844df8d" v='1.3' loc='id' a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl293"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+            <a href="https://weatherwidget.org/" id="ww_eb4fe0844df8d_u" target="_blank">Free weather widget</a>
+        </div>
+    </div>
+    
+
+
+
+
+   <!---footer-->
+   <footer>
+    <div class="about-us sec">
+        <h2>About us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Voluptate nam corporis rationeeffewfw ewfewfwewedwe.</p>
+            <ul class="sci">
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+    </div>
+            <div class="quick-links sec">
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="">FAQs</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+            <div class="quick-links sec">
+                <h2>Shop</h2>
+                <ul>
+                    <li><a href="shop.html">Pesticide</a></li>
+                    <li><a href="shop.html">Animal Husbandary</a></li>
+                    <li><a href="shop.html">Seeds</a></li>
+                    <li><a href="shop.html">Farm machinery</a></li>
+                </ul>
+            </div>
+            <div class="contact sec">
+                <h2>Contact</h2>
+                <ul>
+                    <li><a href=""><i class="fa-solid fa-phone"></i>tel : +91 9724940264</a></li>
+                    <li><a href=""><i class="fa-solid fa-envelope"></i>Mail: abhi37726@gmail.com</a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+    
+</footer>
+<div class="copyright">
+    <p>Copyright 2024 Learniphi Technology PVT. LTD.</p>
+</div>
+
+
+<script src="index.js">
+</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+    fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+    <script async src="https://app2.weatherwidget.org/js/?id=ww_017d07042741a"></script>
+    <script async src="https://app2.weatherwidget.org/js/?id=ww_eb4fe0844df8d"></script>
+</body>
+</html>
