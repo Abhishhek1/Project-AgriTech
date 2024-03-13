@@ -204,8 +204,6 @@
 
 
 
-    
-
 
 
     <!--Reach out section-->
@@ -220,10 +218,22 @@
                 </form>
                 
                 <div class="input-txt-area">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message here..." name="message"></textarea>
+                    <textarea name="" id="message" cols="30" rows="10" placeholder="Enter your message here..." name="message"></textarea>
                 </div>
                 
-                <div class="reach-button"><button>Submit</button></div>
+                <div class="reach-button"><button 
+                    onclick=" var name = document.getElementById('name');
+                    var name = name.value;
+                    
+                    var email = document.getElementById('email');
+                    var email = email.value;
+                    
+                    var message = document.getElementById('message');
+                    var message = message.value;
+
+                    alert(`name:` + name + ` ` + `       E-mail: ` + email +` ` + `         message:` + message)"
+                    >
+                    Submit</button></div>
             </div>
         </div>
 

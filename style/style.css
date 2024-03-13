@@ -97,7 +97,7 @@ header{
     scale: 0.95;
 }
 .search-bar{
-    padding: 2px;
+    margin: 2px;
     display: flex;
     gap: 2px;
     align-items: center;
@@ -106,12 +106,11 @@ header{
     overflow: hidden;
 
 }
-.search-bar input{
-    border: white;  
-}
+
 
 /*DROP-DOWN MENU DESIGN*/
 .dropdown-btn{
+    z-index: 20;
     display: none;
     position: absolute;
     right: 2rem;
