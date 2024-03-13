@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap');
+main{
+    height: 110vh;
+    margin: 40px 30px;
+    box-shadow: 1px 1px 8px grey;
+}
+main .head{
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 0.1px solid grey;
+
+}
+
+main .options{
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+
+}
+table{
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
+
+}
+table thead{
+    background-color: lightgreen;
+}
+table tbody{
+    background-color: greenyellow;
+    width: 100%;
+}

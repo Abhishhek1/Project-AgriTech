@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <!--CSS Style added-->
-    <link rel="stylesheet" href="/style/style-2.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/management.css">
     
     <!-- Font Awesome added -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -55,6 +56,63 @@
 
     <!--content-->
 
+    <main>
+        <div class="head"><i class='bx bxs-right-arrow-square' ></i>Package of Practices</div>
+        <form action="" class="options">
+            <div class="state">
+                <label for="state">State:</label>
+            <select name="state" id="state">
+                <option value="Select-option">All states</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Gujarat">Maharastra</option>
+                <option value="Gujarat">Uttarpradesh</option>
+                <option value="Gujarat">Delhi</option>
+                <option value="Gujarat">Haryana</option>
+            </select>
+            </div>
+
+            <div class="crop">
+                <label for="crop">Crop:</label>
+            <select name="crop" id="crop">
+                <option value="Select-Crop">Select Crop</option>
+                <option value="Rabi">Rabi</option>
+                <option value="Khareef">Khareef</option>
+                <option value="Jute">Jute</option>
+                <option value="Gujarat">Rice</option>
+            </select>
+            </div>
+
+            <div class="season">
+                <label for="season">Season:</label>
+            <select name="season" id="season">
+                <option value="Select-Season">Select Season</option>
+                <option value="Rabi">Summer</option>
+                <option value="Khareef">Winter</option>
+                <option value="Jute">Monsoon</option>
+            </select>
+            </div>
+
+            <div class="submit">
+                <button>Submit</button>
+            </div>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Sr no.</td>
+                    <td>State</td>
+                    <td>Crop name</td>
+                    <td>Season</td>
+                    <td>document</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr><td colspan="5">OOPs data not available</td></tr>
+            </tbody>
+        </table>
+    </main>
     
 
 
