@@ -24,6 +24,10 @@ body{
     font-weight: bold;
     font-size: 1rem;
 }
+.navbar a.active{
+    color: orange;
+}
+
 a:hover{
     color: orange;
 }

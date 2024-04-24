@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.sidebar h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+}
+
+/* Content styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.content header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.content header h1 {
+    font-size: 24px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar ul {
+        display: none;
+    }
+
+    .sidebar.open {
+        display: block;
+    }
+}
+
+
+/* User table styles */
+.user-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+    background-color: #f2f2f2;
+}
+
+.user-table button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Add/Edit User Form styles */
+.user-form {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.user-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user-form input[type="text"],
+.user-form input[type="email"],
+.user-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.user-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.user-form button:hover {
+    background-color: #0056b3;
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h1>Admin Panel</h1>
+    <ul>
+        <li><a href="#users">User Management</a></li>
+        <li><a href="#data">Data Monitoring</a></li>
+        <li><a href="#devices">Device Management</a></li>
+        <li><a href="#analytics">Analytics</a></li>
+        <li><a href="#settings">Settings</a></li>
+    </ul>
+</div>
+
+<!-- Main content -->
+<div class="content">
+    <header>
+        <button class="menu-toggle">&#9776;</button>
+        <h1>Smart Agriculture Admin Panel</h1>
+    </header>
+
+    <section id="users">
+        <h2>User Management</h2>
+        
+        <!-- User table -->
+        <div class="user-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>Admin</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    
+        <!-- Add/Edit User Form -->
+        <div class="user-form">
+            <h3>Add/Edit User</h3>
+            <form>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="role">Role:</label>
+                    <select id="role" name="role">
+                        <option value="admin">Admin</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="technician">Technician</option>
+                    </select>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </section>
+    
+    
+    <section id="data" style="display: none;">
+        <h2>Data Monitoring</h2>
+        <!-- Data monitoring content goes here -->
+    </section>
+    
+    <section id="devices" style="display: none;">
+        <h2>Device Management</h2>
+        <!-- Device management content goes here -->
+    </section>
+    
+    <section id="analytics" style="display: none;">
+        <h2>Analytics</h2>
+        <!-- Analytics content goes here -->
+    </section>
+    
+    <section id="settings" style="display: none;">
+        <h2>Settings</h2>
+        <!-- Settings content goes here -->
+    </section>
+</div>
+
+<script>
+
+// Script to handle sidebar menu toggle
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('open');
+});
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('close');
+});
+</script>
+</body>
+</html>
