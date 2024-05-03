@@ -35,8 +35,6 @@ let currentIndex = 0;
 
 
 
-
-
 // Blog javascript code(blog.html)
 const API_KEY = "dcbaa0f6e99740ccac8815c04b7b9a5f";
 const url = "https://newsapi.org/v2/everything?q=";
@@ -119,3 +117,6 @@ document.getElementById('openPageButton').addEventListener('click', function() {
     window.location.href = 'login.html';
 });
 
+
+
+// Shop code
