@@ -64,27 +64,40 @@
     
     
     <!--widget-container-->
-    <!---Form For alert check------>
-
-    
-    <div class="widget-cont">
-
-        <div class="widget-head">Check out latest Weather update</div>
-
-        <form action="" id="alert-form">
-            <label for="city">City:</label>
-            <select name="city" id="city">
-              <option value="Ahmedabad" onclick="">Ahmedabad</option>
-              <option value="Vadodara">Vadodara</option>
-              <option value="Surat">Surat</option>
-              <option value="Rajkot">Rajkot</option>
-            </select>
-    </form>
-
-        <div id="ww_eb4fe0844df8d" v='1.3' loc='id' a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl293"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
-            <a href="https://weatherwidget.org/" id="ww_eb4fe0844df8d_u" target="_blank">Free weather widget</a>
+    <div class="widget-header">Check Weather in your city:</div>
+    <div class="card-container">
+        <div class="search">
+            <input type="text" placeholder="Enter City Name" spellcheck="false">
+            <button><img src="/img/search.png" alt=""></button>
+        </div>
+        <div class="error-msg">
+            Invalid Entry
+        </div>
+        <div class="weather">
+            <img src="/img/clouds.png" alt="" class="weather-icon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="/img/humidity.png" alt="">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="/img/wind.png" alt="">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
+    <!------------------->
     
 
 
@@ -94,8 +107,7 @@
    <footer>
     <div class="about-us sec">
         <h2>About us</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             Voluptate nam corporis rationeeffewfw ewfewfwewedwe.</p>
+        <p>AgriTech is your trusted partner in modern agriculture. We're dedicated to leveraging technology to empower farmers and revolutionize the way we cultivate the land. From essential farming supplies to weather insights and educational resources, we're here to support every step of your agricultural journey. Join us as we pave the way for a sustainable and prosperous future in agriculture.</p>
             <ul class="sci">
                 <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
                 <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
@@ -136,14 +148,60 @@
 </div>
 
 
-<script src="index.js">
+<script>
+
+const apiKey = "21c7fe89ee08f42b3e42240bbe0882a0"
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+const searchBox = document.querySelector(".search input")
+const searchBtn = document.querySelector(".search button")
+const weatherIcon = document.querySelector(".weather-icon")
+
+async function checkWeather(city){
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
+    if(response.status == 404){
+        document.querySelector(".error-msg").style.display = "block"
+        document.querySelector(".weather").style.display = "none"
+    }
+    else{
+        var data = await response.json();
+
+    console.log(data);
+    document.querySelector(".city").innerHTML = data.name
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp )+ "°C"
+    document.querySelector(".wind").innerHTML = data.wind.speed + "km/h"
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%"
+
+    if (data.weather[0].main == "Clouds") {
+        weatherIcon.src = "/img/clouds.png"
+    }
+    if (data.weather[0].main == "Clear") {
+        weatherIcon.src = "/img/clear.png"
+    }
+    if (data.weather[0].main == "Rain") {
+        weatherIcon.src = "/img/rain.png"
+    }
+    if (data.weather[0].main == "Drizzle") {
+        weatherIcon.src = "/img/drizzle.png"
+    }
+    if (data.weather[0].main == "Mist") {
+        weatherIcon.src = "/img/mist.png"
+    }
+    
+        document.querySelector(".weather").style.display = "block"
+        document.querySelector(".error-msg").style.display = "none"
+ 
+    }
+    
+}
+
+
+searchBtn.addEventListener("click", ()=>{
+    checkWeather(searchBox.value)
+})
+
+
 </script>
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
-    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
-    fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    </script>
-    <script async src="https://app2.weatherwidget.org/js/?id=ww_017d07042741a"></script>
-    <script async src="https://app2.weatherwidget.org/js/?id=ww_eb4fe0844df8d"></script>
 </body>
 </html>

@@ -1,31 +1,18 @@
-/*Map design*/
-.map-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 40px 20px;
-    gap: 20px;
+*{
+    margin:0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
 }
-.map-container .map-head{
-    font-size: 40px;
-    font-weight: bolder;
-    border-bottom: 1px solid grey;
+body{
+    background: #222;
 }
-
-/*Widget Design*/
-.widget-header{
-    font-size: 35px;
-    margin: 0px 40px;
-}
-
 .card-container{
-    width: 70%;
+    width: 90%;
+    max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
-    margin: 40px 60px;
-    margin-left: 100px;
+    margin: 100px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -90,11 +77,4 @@
 .humidity, .wind{
     font-size: 28px;
     margin-top: -6px;
-}
-.weather{
-    display: none;
-}
-.error-msg{
-    font-size: 24px;
-    display: none;
 }

@@ -119,4 +119,5 @@ document.getElementById('openPageButton').addEventListener('click', function() {
 
 
 
-// Shop code
+
+
